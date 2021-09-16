@@ -17,7 +17,7 @@
       "text": "finish.md"
     }
   },
-  "environment": {},
+  "environment": {"uilayout": "editor-terminal"},
   "backend": {
     "imageid": "python:3.8"
   }
