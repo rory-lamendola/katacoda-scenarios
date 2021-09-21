@@ -15,6 +15,11 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "git": [
+          {"file": "interviews", "target": "/interviews", "chmod": "+x"}
+      ]
     }
   },
   "environment": {"uilayout": "editor-terminal"},
