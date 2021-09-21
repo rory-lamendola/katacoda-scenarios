@@ -7,22 +7,15 @@
       "steps": [
           {
               "title": "Step 1",
-              "text": "step1.md",
-              "courseData": "background.sh",
-              "code": "foreground.sh"
+              "text": "step1.md"
           }
-      ],
-      "assets": {
-          "host01": [
-              {"file": "interviews/requirements.txt", "target": "/interviews", "chmod": "+x"}
-          ]
-      }
+      ]
   },
   "environment": {
       "hideintro": true, "hidefinish": true,
       "uilayout": "editor-terminal"
   },
   "backend": {
-      "imageid": "python:3.8"
+      "imageid": "ubuntu:2004"
   }
 }
