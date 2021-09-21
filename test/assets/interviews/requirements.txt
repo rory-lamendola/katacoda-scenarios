@@ -1,0 +1,9 @@
+alembic
+dictalchemy
+flask
+flask_restful
+psycopg2-binary
+sqlalchemy
+uwsgi
+pals
+healthcheck

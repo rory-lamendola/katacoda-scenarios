@@ -1,0 +1,42 @@
+---
+version: "2.3"
+
+services:
+  interviews:
+    image: "interviews"
+    build:
+      context: ..
+      dockerfile: "interviews/Dockerfile"
+    volumes:
+      - ./interviews:/var/www/shared/interviews/interviews
+    environment:
+      - POSTGRES_USER=interviews
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=interviews
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+
+      - FLASK_ENV=development
+      - UWSGI_AUTORELOAD=1
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: curl http://localhost:8080/_mgmt/health
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      default: {}
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=interviews
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=interviews
+    ports:
+      - 5432:5432
+    networks:
+      default: {}
+    healthcheck:
+      test: pg_isready -d "interviews" -U "interviews"
