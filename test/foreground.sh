@@ -1,0 +1,1 @@
+while [ ! -f /interviews/requirements.txt ]; do sleep 1; done;

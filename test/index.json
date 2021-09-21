@@ -1,29 +1,28 @@
+
 {
-  "title": "test",
-  "description": "test",
-  "difficulty": "Beginner",
-  "time": "60 minutes",
+  "noindex": true,
+  "title": "Upload File Assets",
+  "description": "Automatically upload file assets to the environment",
   "details": {
-    "steps": [
-      {
-        "title": "Step 1",
-        "text": "step1.md"
+      "steps": [
+          {
+              "title": "Step 1",
+              "text": "step1.md",
+              "courseData": "background.sh",
+              "code": "foreground.sh"
+          }
+      ],
+      "assets": {
+          "host01": [
+              {"file": "interviews/requirements.txt", "target": "/interviews", "chmod": "+x"}
+          ]
       }
-    ],
-    "intro": {
-      "text": "intro.md"
-    },
-    "finish": {
-      "text": "finish.md"
-    },
-    "assets": {
-      "git": [
-          {"file": "interviews", "target": "/interviews", "chmod": "+x"}
-      ]
-    }
   },
-  "environment": {"uilayout": "editor-terminal"},
+  "environment": {
+      "hideintro": true, "hidefinish": true,
+      "uilayout": "editor-terminal"
+  },
   "backend": {
-    "imageid": "python:3.8"
+      "imageid": "python:3.8"
   }
 }
