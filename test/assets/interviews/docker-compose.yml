@@ -15,13 +15,13 @@ services:
       - POSTGRES_DB=interviews
       - POSTGRES_HOST=postgres
       - POSTGRES_PORT=5432
-
+      - FLASK_APP=interviews.main:app
       - FLASK_ENV=development
       - UWSGI_AUTORELOAD=1
     ports:
       - 8080:8080
-    healthcheck:
-      test: curl http://localhost:8080/_mgmt/health
+    # healthcheck:
+    #   test: curl http://localhost:8080/_mgmt/health
     depends_on:
       postgres:
         condition: service_healthy
@@ -40,3 +40,6 @@ services:
       default: {}
     healthcheck:
       test: pg_isready -d "interviews" -U "interviews"
+networks:
+  default:
+    driver: bridge

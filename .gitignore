@@ -1,0 +1,79 @@
+# IDEs
+.project
+.pydevproject
+.idea
+.vscode
+.settings
+
+# Random files
+*~
+\#*
+tmp
+
+virtualenv/
+htmlcov/
+downloads/
+
+# Python compiled byte code and installation droppings
+*.pyc
+*.egg-info
+.eggs
+.mypy_cache/
+
+# mypy daemon droppings
+.dmypy.json
+
+# Coverage
+coverage/
+.coverage
+.cache
+coverage.xml
+
+# static validation files
+.prospector.yml
+.coveragerc
+
+# in case we run shippable tests don't include it
+shippable/
+
+# other files used in testing
+.tox/
+junit.xml
+
+# Vagrant
+.vagrant
+
+*.meta
+
+# editor and mac droppings
+*.swp
+*.gz
+.DS_Store
+*.pkl
+*.ipynb
+*.cprof
+venv
+
+# Stop ignoring csvs in
+!*.csv
+
+# documentation
+gh-md-toc
+
+# terraform things
+terraform
+*.tfvars
+autoconfig.tf
+providers.tf
+.terraform/
+terraform.tfstate.d/
+*.tfapply
+dev.log
+.terraform.lock.hcl
+
+# static nomad job files; these should be templated and generated for
+# each deploy
+*.nomad.hcl
+
+node_modules
+package-lock.json

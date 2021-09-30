@@ -5,6 +5,7 @@
 set -eux
 
 . venv/bin/activate
+pip install -e .
 export PYTHONPATH=.
 
 (
@@ -13,4 +14,4 @@ export PYTHONPATH=.
     alembic upgrade head
 )
 
-exec python interviews/main.py
+exec uwsgi --ini uwsgi.ini

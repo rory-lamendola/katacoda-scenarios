@@ -3,6 +3,8 @@ COPY ./* /var/www/shared/interviews
 WORKDIR /var/www/shared/interviews
 RUN pip install virtualenv
 RUN make venv
+RUN . venv/bin/activate
+RUN pip install -e .
 
 EXPOSE 8080
 

@@ -8,7 +8,9 @@ import setuptools
 # instead of here
 install_reqs = [
     "alembic",
+    "black",
     "dictalchemy",
+    "faker",
     "flask",
     "flask_restful",
     "psycopg2-binary",
@@ -42,18 +44,18 @@ tests_require = [
 setuptools.setup(
     name="interviews",
     packages=setuptools.find_namespace_packages(
-        include=["interviews*"], exclude=["*.test"]),
+        include=["interviews*"], exclude=["*.test"]
+    ),
     package_data={"interviews": ["py.typed"]},
     setup_requires=[
         "setuptools_scm",
         "pytest-runner",
     ],
-    
     description="interviews",
     author="Petal Card Inc.",
     install_requires=install_reqs,
     tests_require=tests_require,
     extras_require={"test": tests_require},
-    entry_points={"loadtest.scenario":[]},
+    entry_points={"loadtest.scenario": []},
     zip_safe=False,
 )

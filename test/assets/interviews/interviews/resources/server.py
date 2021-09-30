@@ -5,12 +5,16 @@ from typing import Any
 
 import flask
 import flask_restful
-import healthcheck
+from healthcheck import HealthCheck
 
 from interviews import postgres
 from interviews.resources import member
+from interviews.resources import payments
 
 LOG = logging.getLogger(__name__)
+
+
+health = HealthCheck()
 
 
 class InterviewsServer(postgres.PostgresMixin):
@@ -23,11 +27,13 @@ class InterviewsServer(postgres.PostgresMixin):
 
         self._api = flask_restful.Api(app=self.app)
 
-        self.db_connect(health=healthcheck.HealthCheck(success_ttl=None, failure_ttl=None))
+        self.db_connect()
+        self.add_resources()
 
     def add_resources(self, *args: Any, **kwargs: Any) -> None:
         """Mount resources to the server."""
         self.api.add_resource(member.MemberResource, "/api/member")
+        self.api.add_resource(payments.PaymentsResource, "/api/payments")
 
     def run(self) -> None:
         """Run the server with thread support."""
@@ -41,4 +47,3 @@ class InterviewsServer(postgres.PostgresMixin):
     def api(self) -> flask_restful.Api:
         """Property reference to underlying flask_restful.Api."""
         return self._api
-
