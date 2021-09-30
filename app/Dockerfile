@@ -1,5 +1,5 @@
 FROM python:3.8 AS builder
-COPY ./* /var/www/shared/app
+COPY ./* /var/www/shared/app/
 WORKDIR /var/www/shared/app
 RUN pip install virtualenv
 RUN make venv
