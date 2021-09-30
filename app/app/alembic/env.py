@@ -2,8 +2,8 @@
 
 from alembic import context
 
-from interviews import postgres
-from interviews import models
+from app import postgres
+from app import models
 
 
 # this is the Alembic Config object, which provides

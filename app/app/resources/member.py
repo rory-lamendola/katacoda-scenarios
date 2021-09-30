@@ -7,7 +7,7 @@ import flask
 import flask_restful
 from flask_restful import reqparse
 
-from interviews import models
+from app import models
 
 LOG = logging.getLogger(__name__)
 

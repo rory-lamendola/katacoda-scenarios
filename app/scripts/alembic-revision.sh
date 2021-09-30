@@ -10,8 +10,8 @@ if [[ -z $message ]]; then
     exit 1
 fi
 
-component_name="interviews"
-inner_directory="interviews"
+component_name="app"
+inner_directory="app"
 topdir=$(git rev-parse --show-toplevel)
 
 # 

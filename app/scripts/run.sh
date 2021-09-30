@@ -9,7 +9,7 @@ pip install -e .
 export PYTHONPATH=.
 
 (
-    cd "interviews"
+    cd "app"
     
     alembic upgrade head
 )

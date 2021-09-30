@@ -10,7 +10,7 @@ import pals
 import sqlalchemy
 from sqlalchemy import orm
 
-from interviews import models
+from app import models
 
 LOG = logging.getLogger(__name__)
 

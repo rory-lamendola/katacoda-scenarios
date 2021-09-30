@@ -1,6 +1,6 @@
 FROM python:3.8 AS builder
-COPY ./* /var/www/shared/interviews
-WORKDIR /var/www/shared/interviews
+COPY ./* /var/www/shared/app
+WORKDIR /var/www/shared/app
 RUN pip install virtualenv
 RUN make venv
 RUN . venv/bin/activate
@@ -16,5 +16,5 @@ RUN apt-get update -y && \
         && rm -r /var/lib/apt/lists/*
 
 ENTRYPOINT ["/bin/sh"]
-CMD ["/var/www/shared/interviews/scripts/run.sh"]
+CMD ["/var/www/shared/app/scripts/run.sh"]
 

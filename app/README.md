@@ -1,6 +1,6 @@
-# interviews
+# app
 
-interviews
+app
 
 * [API](docs/api.md)
 * [Configuration](docs/config.md)

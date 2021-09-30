@@ -42,16 +42,16 @@ tests_require = [
 ]
 
 setuptools.setup(
-    name="interviews",
+    name="app",
     packages=setuptools.find_namespace_packages(
-        include=["interviews*"], exclude=["*.test"]
+        include=["app*"], exclude=["*.test"]
     ),
-    package_data={"interviews": ["py.typed"]},
+    package_data={"app": ["py.typed"]},
     setup_requires=[
         "setuptools_scm",
         "pytest-runner",
     ],
-    description="interviews",
+    description="app",
     author="Petal Card Inc.",
     install_requires=install_reqs,
     tests_require=tests_require,

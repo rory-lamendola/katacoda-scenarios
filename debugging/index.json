@@ -1,0 +1,22 @@
+
+{
+  "noindex": true,
+  "title": "Senior Eng Interview",
+  "description": "Debug an app in docker",
+  "details": {
+      "steps": [
+          {
+              "title": "Interview",
+              "text": "step1.md",
+              "code": "setup.sh"
+          }
+      ]
+  },
+  "environment": {
+      "hideintro": true, "hidefinish": true,
+      "uilayout": "vscode-terminal-split"
+  },
+  "backend": {
+      "imageid": "ubuntu:2004"
+  }
+}

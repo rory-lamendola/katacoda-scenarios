@@ -14,7 +14,7 @@ import random
 
 import datetime
 from faker import Faker
-from interviews import models
+from app import models
 
 faker = Faker()
 

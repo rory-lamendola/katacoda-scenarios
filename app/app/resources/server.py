@@ -7,9 +7,9 @@ import flask
 import flask_restful
 from healthcheck import HealthCheck
 
-from interviews import postgres
-from interviews.resources import member
-from interviews.resources import payments
+from app import postgres
+from app.resources import member
+from app.resources import payments
 
 LOG = logging.getLogger(__name__)
 

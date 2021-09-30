@@ -2,20 +2,20 @@
 version: "2.3"
 
 services:
-  interviews:
-    image: "interviews"
+  app:
+    image: "app"
     build:
       context: ..
-      dockerfile: "interviews/Dockerfile"
+      dockerfile: "app/Dockerfile"
     volumes:
-      - ./interviews:/var/www/shared/interviews/interviews
+      - ./app:/var/www/shared/app/app
     environment:
-      - POSTGRES_USER=interviews
+      - POSTGRES_USER=app
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=interviews
+      - POSTGRES_DB=app
       - POSTGRES_HOST=postgres
       - POSTGRES_PORT=5432
-      - FLASK_APP=interviews.main:app
+      - FLASK_APP=app.main:app
       - FLASK_ENV=development
       - UWSGI_AUTORELOAD=1
     ports:
@@ -31,15 +31,15 @@ services:
   postgres:
     image: postgres
     environment:
-      - POSTGRES_USER=interviews
+      - POSTGRES_USER=app
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=interviews
+      - POSTGRES_DB=app
     ports:
       - 5432:5432
     networks:
       default: {}
     healthcheck:
-      test: pg_isready -d "interviews" -U "interviews"
+      test: pg_isready -d "app" -U "app"
 networks:
   default:
     driver: bridge

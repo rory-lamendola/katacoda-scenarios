@@ -10,8 +10,8 @@ from petal.utils.postgres import connection
 from petal.utils.postgres import models
 
 
-from interviews.resources import server
-from interviews import settings
+from app.resources import server
+from app import settings
 
 # pylint: disable=redefined-outer-name
 

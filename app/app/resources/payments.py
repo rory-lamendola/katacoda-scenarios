@@ -10,7 +10,7 @@ from flask_restful import reqparse
 from flask_restful import inputs
 from sqlalchemy.sql import func
 
-from interviews import models
+from app import models
 
 LOG = logging.getLogger(__name__)
 
