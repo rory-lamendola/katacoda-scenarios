@@ -26,7 +26,7 @@ class PaymentsResource(flask_restful.Resource):
 
         Example:
         ```bash
-        % curl -d {"member_uuid": "992a54a8-3d3d-43de-a852-4aa41f16cc27", "date": "2021-09-28"} http://localhost:8080/api/payments
+        % curl -X GET -H Content-Type:application/json -d {"member_uuid": "992a54a8-3d3d-43de-a852-4aa41f16cc27", "date": "2021-09-28"} http://localhost:8080/api/payments
         ```
         """
 
@@ -45,7 +45,7 @@ class PaymentsResource(flask_restful.Resource):
         card = models.Card.get_card_by_member(member_uuid).first()
         if card:
             total_amount = (
-                models.Transactions.get_transactions_by_card(card.id)
+                models.Transactions.get_transactions_by_card(card.idd)
                 .filter(
                     models.Transactions.transaction_date.between(
                         month_start, month_end

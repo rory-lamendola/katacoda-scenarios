@@ -30,7 +30,7 @@ class MemberResource(flask_restful.Resource):
         ```
         Example:
         ```bash
-        % curl -d '{"member_uuid":"992a54a8-3d3d-43de-a852-4aa41f16cc27"}' http://localhost:8080/api/member
+        % curl -X GET -H Content-Type:application/json -d '{"member_uuid":"992a54a8-3d3d-43de-a852-4aa41f16cc27"}' http://localhost:8080/api/member
         ```
         """
 
