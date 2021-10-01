@@ -9,7 +9,6 @@ from healthcheck import HealthCheck
 
 from app import postgres
 from app.resources import member
-from app.resources import payments
 
 LOG = logging.getLogger(__name__)
 

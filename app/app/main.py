@@ -4,7 +4,7 @@ import logging
 
 import flask
 
-from app.resources import server
+from app.resources import servers
 
 
 LOG = logging.getLogger(__name__)
